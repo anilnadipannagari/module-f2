@@ -1,10 +1,10 @@
 // using javascript modules for easier access of data as import with assert (json) isn't supported in firefox
 import { data } from "./MOCK_DATA.js";
 const tbody = document.querySelector("tbody");
-let students = data;
-students = students.map(transformingData);
+let student = data;
+student = student.map(transform);
 // adding default 100 student data to table
-students.forEach(addToTable);
+student.forEach(addToTable);
 
 const searchInput = document.querySelector("#search");
 const form = document.querySelector("form");
@@ -18,7 +18,7 @@ function filterBySearch(event) {
   let value = searchInput.value.trim().toLowerCase();
   if (value.length) {
     // something to filter
-    let filtered = students.filter(
+    let filtered = student.filter(
       (student) =>
         student.name.toLowerCase().includes(value) ||
         student.email.toLowerCase().includes(value)
@@ -30,7 +30,7 @@ function filterBySearch(event) {
     }
   } else {
     // render the complete list
-    students.forEach(addToTable);
+    student.forEach(addToTable);
   }
 }
 
@@ -46,29 +46,29 @@ function sortData(event) {
   event.target.classList.toggle("active");
   let id = event.target.id;
 
-  if (id == "sort-ascending") {
-    students.sort((a, b) => a.name.localeCompare(b.name));
-    students.forEach(addToTable);
-  } else if (id == "sort-descending") {
-    students.sort((a, b) => b.name.localeCompare(a.name));
-    students.forEach(addToTable);
-  } else if (id == "sort-marks") {
-    students.sort((a, b) => a.marks - b.marks);
-    students.forEach(addToTable);
-  } else if (id == "sort-passing") {
-    let passingStudents = students.filter(
+  if (id == "ascending") {
+    student.sort((a, b) => a.name.localeCompare(b.name));
+    student.forEach(addToTable);
+  } else if (id == "descending") {
+    student.sort((a, b) => b.name.localeCompare(a.name));
+    student.forEach(addToTable);
+  } else if (id == "marks") {
+    student.sort((a, b) => a.marks - b.marks);
+    student.forEach(addToTable);
+  } else if (id == "passing") {
+    let passingStudent = student.filter(
       (student) => student.passing == "Passing"
     );
-    passingStudents.forEach(addToTable);
-  } else if (id == "sort-classNo") {
-    students.sort((a, b) => a.classNo - b.classNo);
-    students.forEach(addToTable);
-  } else if (id == "sort-gender") {
-    students.sort((a, b) => a.gender.localeCompare(b.gender));
-    students.forEach(addToTable);
+    passingStudent.forEach(addToTable);
+  } else if (id == "classNo") {
+    student.sort((a, b) => a.classNo - b.classNo);
+    student.forEach(addToTable);
+  } else if (id == "gender") {
+    student.sort((a, b) => a.gender.localeCompare(b.gender));
+    student.forEach(addToTable);
   }
 }
-function transformingData(student) {
+function transform(student) {
   const {
     id,
     first_name,
