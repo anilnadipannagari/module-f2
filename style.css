@@ -1,29 +1,29 @@
 * {
     box-sizing: border-box;
   }
-  
+  /* font */
   body {
     font-family: sans-serif;
     margin: 0;
   }
-  
+  /* heading */
   h2 {
     margin-top: 0;
     font-weight: normal;
   }
-  
+  /* Nav bar and Buttons */
   .flex {
     display: flex;
     justify-content: space-between;
     gap: 0.5em;
   }
-  
+  /* button Bg and color */
   .bg-black {
     background: black;
     color: white;
     padding: 1em;
   }
-  
+  /* container */
   .container {
     max-width: 90vw;
     margin: 0 auto;
@@ -32,12 +32,12 @@
   .flow-space > * + * {
     margin-top: var(--spacer, 1em);
   }
-  /* table section styling*/
+  /* table */
   table {
     border-spacing: 0;
     text-align: left;
   }
-  
+  /* thead and data */
   th,
   td {
     font-weight: normal;
@@ -49,7 +49,7 @@
   td {
     padding: 0.3em 1em;
   }
-  
+  /*  child properties*/
   th:first-child,
   td:first-child {
     text-align: center;
@@ -65,7 +65,7 @@
     width: 100%;
     gap: 0.5em;
   }
-  
+  /*  btn */
   button {
     cursor: pointer;
     border: none;
@@ -77,18 +77,18 @@
   .active {
     opacity: 0.5;
   }
-  
+  /* btn hover */
   button:hover {
     opacity: 0.7;
   }
-  
+  /* input */
   input {
     width: 100%;
     border: 2px solid black;
     font-size: 1.2em;
     padding: 0.5em;
   }
-  
+  /* img properties*/
   img {
     width: 45px;
     height: 45px;
